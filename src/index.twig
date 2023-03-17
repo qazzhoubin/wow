@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+  </head>
+  <body>
+    <section class="con">
+      <section class="left">
+      {% for i in range(0,10) %}
+        <dl class="nav">
+          <dt>Cat-{{i}}</dt>
+          {% for j in range(0,10) %}
+          <dd><a href="#">Link-{{j}}</a></dd>
+          {% endfor %}
+        </dl>
+      {% endfor %}
+      </section>
+      <section class="right">
+       <ul class="items">
+       {% for item in items %}
+       <li class="item">
+       <a href="{{item.url}}" target="_blank">
+       <img border="0" src="{{item.image}}" >
+       </a>
+       </li>
+       {% endfor %}
+       </ul>
+      </section>
+    </section>
+    <footer class="pfoot">
+    
+    </footer>
+  </body>
+</html>

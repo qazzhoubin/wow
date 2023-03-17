@@ -1,7 +1,8 @@
 import path from "node:path"
 import WebpackCommon from "./webpack.common"
 import HtmlWebpackPlugin from "html-webpack-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
+
+import { Items } from "./src/data"
 
 export default [
   WebpackCommon({
@@ -12,9 +13,11 @@ export default [
       path: path.resolve(__dirname, "public")
     },
     plugins: [
-      new MiniCssExtractPlugin(),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "./src/index.html")
+        template: path.resolve(__dirname, "./src/index.twig"),
+        templateParameters: {
+          items: Items
+        }
       })
     ]
   })]

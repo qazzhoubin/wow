@@ -9,29 +9,49 @@ html{
 }
 
 .con{
-    width: 960px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #ddd;
 }
 
-.sec{
-    margin: 5rem;
+.left{
+    width: 180px;
+    border-right: 1px solid #ddd;
+}
+
+.right{
+    flex: 1;
+}
+
+.items{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item{
+    width: 240px;
+    height: 240px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
     padding: 1rem;
 }
 
-.bordered{
-    border: 1px solid #dddddd;
-}
-
-.cat{
+.nav{
+    padding: 1rem;
     >dt{
-        font-weight: bold;
         font-size: 1.2rem;
+        font-weight: bold;
     }
     >dd{
-        display: inline-block;
-        font-size: 1.5rem;
-        >a{
-            text-decoration: none;
-        }
+        padding-left: 1.2rem;
     }
+}
+
+.pfoot{
+    width: 100%;
+    height: 200px;
+    background-color: #232F3E;
 }

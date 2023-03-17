@@ -23,6 +23,10 @@ export default function (config:WebpackConfiguration):WebpackConfiguration {
           {
             test: /\.less$/,
             use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"]
+          },
+          {
+            test: /\.twig$/,
+            loader: "twig-loader"
           }
         ]
       },
@@ -31,7 +35,10 @@ export default function (config:WebpackConfiguration):WebpackConfiguration {
       },
       optimization: {
         minimizer: [
-          new CssMinimizerPlugin()
+          new CssMinimizerPlugin(),
+          new MiniCssExtractPlugin({
+            filename: "[name].[fullhash].css"
+          })
         ]
       }
     },
